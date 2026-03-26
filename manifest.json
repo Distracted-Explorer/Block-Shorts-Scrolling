@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "BlockShorts",
+  "version": "1.1",
+  "description": "Blocks YouTube Shorts from appearing",
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
